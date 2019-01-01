@@ -34,6 +34,9 @@ if (process.env.NODE_ENV === 'production') {
 
 	const path = require('path');
 
+
+	// when request route is not found in above routes, send
+	// index.html
 	app.get('*', (req, res) => {
 		res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 	})
